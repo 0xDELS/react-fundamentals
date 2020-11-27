@@ -10,9 +10,15 @@
   <script type="module">
     const rootElement = document.getElementById('root')
 
-    const elementProps = {children: 'Hello World', className: 'container'}
-    const reactElement = React.createElement('div', elementProps)
-    ReactDOM.render(reactElement, rootElement)
+    const element = React.createElement('div', {
+      className: 'container',
+      children: [
+        React.createElement('span', null, 'Hello'),
+        ' ',
+        React.createElement('span', null, 'World'),
+      ],
+    })
+    ReactDOM.render(element, rootElement)
 
     // 🐨 Please re-implement the regular document.createElement code above
     // with these React API calls
